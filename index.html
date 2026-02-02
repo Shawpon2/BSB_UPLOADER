@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSB Uploader</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BSB Uploader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #ff4c4c;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    input[type="file"] {
+      margin: 20px 0;
+    }
+    button {
+      background-color: #ff4c4c;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #ff1a1a;
+    }
+  </style>
 </head>
 <body>
-    <h1>BSB Uploader</h1>
-    <p>এইটা এখন GitHub Pages থেকে দেখা যাবে!</p>
+  <h1>BSB Uploader</h1>
+  <p>এখান থেকে তুমি ফাইল আপলোড করতে পারবে!</p>
+
+  <input type="file" id="fileInput" />
+  <br />
+  <button onclick="uploadFile()">Upload</button>
+
+  <script>
+    function uploadFile() {
+      const file = document.getElementById('fileInput').files[0];
+      if (!file) {
+        alert('প্রথমে একটি ফাইল সিলেক্ট করো!');
+        return;
+      }
+      alert(file.name + " আপলোডের জন্য প্রস্তুত। (Demo পেজে এটি শুধু দেখানো হবে।)");
+      // এখানে তুমি চাইলে GitHub API বা অন্য সার্ভার আপলোড কোড যোগ করতে পারো
+    }
+  </script>
 </body>
 </html>
